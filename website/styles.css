@@ -502,3 +502,17 @@ html, body {
   background: var(--accent);
   color: var(--bg-primary);
 }
+
+/* Font Awesome Icon Colors */
+.logo-icon i {
+  color: var(--fg-secondary);
+}
+
+.btn-icon i,
+.theme-toggle i {
+  color: var(--fg-primary);
+}
+
+.empty-state-icon i {
+  color: var(--fg-muted);
+}

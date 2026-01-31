@@ -339,11 +339,11 @@ const EXAMPLES = {
 
 // Category metadata
 const CATEGORIES = {
-  flowcharts: { label: 'Flowcharts', icon: '📊' },
-  state: { label: 'State Diagrams', icon: '🔄' },
-  sequence: { label: 'Sequence', icon: '↔️' },
-  class: { label: 'Class Diagrams', icon: '📦' },
-  er: { label: 'ER Diagrams', icon: '🗄️' }
+  flowcharts: { label: 'Flowcharts', icon: '<i class="fa-solid fa-diagram-project"></i>' },
+  state: { label: 'State Diagrams', icon: '<i class="fa-solid fa-arrows-rotate"></i>' },
+  sequence: { label: 'Sequence', icon: '<i class="fa-solid fa-arrows-left-right"></i>' },
+  class: { label: 'Class Diagrams', icon: '<i class="fa-solid fa-cube"></i>' },
+  er: { label: 'ER Diagrams', icon: '<i class="fa-solid fa-database"></i>' }
 }
 
 // Theme names for display

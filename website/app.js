@@ -66,7 +66,7 @@ function renderCategoryTabs() {
   Object.entries(CATEGORIES).forEach(([key, category]) => {
     const tab = document.createElement('button')
     tab.className = `category-tab ${key === currentCategory ? 'active' : ''}`
-    tab.textContent = `${category.icon} ${category.label}`
+    tab.innerHTML = `${category.icon} ${category.label}`
     tab.dataset.category = key
     tab.addEventListener('click', () => loadCategory(key))
     categoryTabs.appendChild(tab)
@@ -224,7 +224,7 @@ function hideError() {
 function showEmpty() {
   output.innerHTML = `
     <div class="empty-state">
-      <div class="empty-state-icon">📊</div>
+      <div class="empty-state-icon"><i class="fa-solid fa-diagram-project"></i></div>
       <div>Enter Mermaid code to see the diagram</div>
     </div>
   `
