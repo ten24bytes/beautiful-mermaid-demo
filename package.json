@@ -1,0 +1,25 @@
+{
+  "name": "beautiful-mermaid-demo",
+  "version": "1.0.0",
+  "description": "Demo project showcasing Beautiful Mermaid diagram rendering capabilities",
+  "type": "module",
+  "scripts": {
+    "demo": "tsx src/index.ts",
+    "demo:themes": "tsx src/demos/all-themes.ts",
+    "demo:diagrams": "tsx src/demos/all-diagrams.ts",
+    "demo:ascii": "tsx src/demos/ascii-output.ts",
+    "demo:custom": "tsx src/demos/custom-theme.ts",
+    "demo:export": "tsx src/demos/svg-export.ts"
+  },
+  "keywords": ["mermaid", "diagrams", "svg", "ascii", "visualization"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "beautiful-mermaid": "^0.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
