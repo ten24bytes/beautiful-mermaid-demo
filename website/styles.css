@@ -1,5 +1,6 @@
 /* CSS Variables */
 :root {
+  /* Dark theme (default) */
   --bg-primary: #1a1b26;
   --bg-secondary: #24283b;
   --bg-tertiary: #1f2335;
@@ -12,6 +13,20 @@
   --error: #f7768e;
   --radius: 8px;
   --transition: 0.2s ease;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e8e8e8;
+  --fg-primary: #1a1b26;
+  --fg-secondary: #2e5cb8;
+  --fg-muted: #6b7280;
+  --border-color: #d1d5db;
+  --accent: #2563eb;
+  --success: #059669;
+  --error: #dc2626;
 }
 
 /* Reset */
@@ -62,22 +77,65 @@ html, body {
   font-size: 24px;
 }
 
-.theme-select {
-  padding: 8px 12px;
+/* Site Theme Toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-size: 18px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  background: var(--bg-secondary);
+}
+
+.theme-toggle:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Show/hide icons based on theme */
+.theme-icon-light {
+  display: none;
+}
+
+.theme-icon-dark {
+  display: block;
+}
+
+[data-theme="light"] .theme-icon-light {
+  display: block;
+}
+
+[data-theme="light"] .theme-icon-dark {
+  display: none;
+}
+
+/* Diagram Theme Select */
+.diagram-theme-select {
+  padding: 6px 10px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
   color: var(--fg-primary);
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   transition: border-color var(--transition);
 }
 
-.theme-select:hover {
+.diagram-theme-select:hover {
   border-color: var(--accent);
 }
 
-.theme-select:focus {
+.diagram-theme-select:focus {
   outline: none;
   border-color: var(--accent);
 }

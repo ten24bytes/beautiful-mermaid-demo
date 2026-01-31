@@ -4,6 +4,7 @@ let currentExampleIndex = 0
 let currentTheme = 'tokyo-night'
 let currentSvg = ''
 let renderTimeout = null
+let siteTheme = localStorage.getItem('site-theme') || 'dark'
 
 // DOM Elements
 const editor = document.getElementById('editor')
@@ -20,10 +21,29 @@ const { renderMermaid, THEMES } = beautifulMermaid
 
 // Initialize Application
 function init() {
+  initSiteTheme()
   populateThemeSelect()
   renderCategoryTabs()
   loadCategory('flowcharts')
   setupEventListeners()
+}
+
+// Initialize site theme from localStorage
+function initSiteTheme() {
+  if (siteTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light')
+  }
+}
+
+// Toggle site theme (dark/light)
+function toggleSiteTheme() {
+  siteTheme = siteTheme === 'dark' ? 'light' : 'dark'
+  if (siteTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light')
+  } else {
+    document.documentElement.removeAttribute('data-theme')
+  }
+  localStorage.setItem('site-theme', siteTheme)
 }
 
 // Populate theme dropdown
@@ -224,6 +244,7 @@ function showToast(message) {
 function setupEventListeners() {
   editor.addEventListener('input', handleInput)
   themeSelect.addEventListener('change', handleThemeChange)
+  document.getElementById('site-theme-toggle').addEventListener('click', toggleSiteTheme)
 
   // Button handlers via onclick in HTML
   window.clearEditor = clearEditor

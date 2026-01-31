@@ -25,9 +25,10 @@
         <span class="logo-icon">📊</span>
         <span>Beautiful Mermaid Showcase</span>
       </div>
-      <select id="theme-select" class="theme-select" aria-label="Select theme">
-        <!-- Options populated by JS -->
-      </select>
+      <button id="site-theme-toggle" class="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle theme">
+        <span class="theme-icon-dark">🌙</span>
+        <span class="theme-icon-light">☀️</span>
+      </button>
     </header>
 
     <!-- Navigation -->
@@ -78,6 +79,9 @@ graph TD
         <div class="panel-header">
           <span class="panel-title">Rendered Diagram</span>
           <div class="panel-actions">
+            <select id="theme-select" class="diagram-theme-select" aria-label="Select diagram theme">
+              <!-- Options populated by JS -->
+            </select>
             <button class="btn" onclick="downloadSvg()" title="Download SVG file">
               <span class="btn-icon">💾</span>
               Download
