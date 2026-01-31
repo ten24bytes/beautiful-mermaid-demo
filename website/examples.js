@@ -350,6 +350,7 @@ const CATEGORIES = {
 const THEME_NAMES = {
   'tokyo-night': 'Tokyo Night',
   'tokyo-night-light': 'Tokyo Night Light',
+  'tokyo-night-storm': 'Tokyo Night Storm',
   'dracula': 'Dracula',
   'github-dark': 'GitHub Dark',
   'github-light': 'GitHub Light',
