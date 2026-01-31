@@ -1,7 +1,7 @@
 // Application State
 let currentCategory = 'flowcharts'
 let currentExampleIndex = 0
-let currentTheme = 'tokyo-night'
+let currentTheme = (localStorage.getItem('site-theme') || 'dark') === 'light' ? 'github-light' : 'github-dark'
 let currentSvg = ''
 let renderTimeout = null
 let siteTheme = localStorage.getItem('site-theme') || 'dark'
@@ -48,7 +48,11 @@ function toggleSiteTheme() {
 
 // Populate theme dropdown
 function populateThemeSelect() {
-  const themes = Object.keys(THEMES)
+  const themes = Object.keys(THEMES).sort((a, b) => {
+    const nameA = THEME_NAMES[a] || a
+    const nameB = THEME_NAMES[b] || b
+    return nameA.localeCompare(nameB)
+  })
   themes.forEach(theme => {
     const option = document.createElement('option')
     option.value = theme
