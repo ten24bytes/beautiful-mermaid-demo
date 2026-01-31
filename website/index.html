@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beautiful Mermaid Showcase</title>
+  <meta name="description" content="Interactive showcase of Beautiful Mermaid - a TypeScript library for rendering Mermaid diagrams as SVG">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">📊</span>
+        <span>Beautiful Mermaid Showcase</span>
+      </div>
+      <select id="theme-select" class="theme-select" aria-label="Select theme">
+        <!-- Options populated by JS -->
+      </select>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div id="category-tabs" class="category-tabs">
+        <!-- Tabs populated by JS -->
+      </div>
+      <div id="example-pills" class="example-pills">
+        <!-- Pills populated by JS -->
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Editor Panel -->
+      <div class="panel panel-left">
+        <div class="panel-header">
+          <span class="panel-title">Mermaid Code</span>
+          <div class="panel-actions">
+            <button class="btn" onclick="clearEditor()" title="Clear editor">
+              <span class="btn-icon">🗑️</span>
+              Clear
+            </button>
+            <button class="btn" onclick="copySvg()" title="Copy SVG to clipboard">
+              <span class="btn-icon">📋</span>
+              Copy SVG
+            </button>
+          </div>
+        </div>
+        <div class="editor-container">
+          <textarea
+            id="editor"
+            class="editor"
+            placeholder="Enter your Mermaid diagram code here...
+
+Example:
+graph TD
+  A[Start] --> B{Decision}
+  B -->|Yes| C[Process]
+  B -->|No| D[End]"
+            spellcheck="false"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Output Panel -->
+      <div class="panel panel-right">
+        <div class="panel-header">
+          <span class="panel-title">Rendered Diagram</span>
+          <div class="panel-actions">
+            <button class="btn" onclick="downloadSvg()" title="Download SVG file">
+              <span class="btn-icon">💾</span>
+              Download
+            </button>
+          </div>
+        </div>
+        <div class="output-container">
+          <div id="loading" class="loading">
+            <div class="loading-spinner"></div>
+            <span>Rendering...</span>
+          </div>
+          <div id="error" class="error-container"></div>
+          <div id="output" class="output">
+            <div class="empty-state">
+              <div class="empty-state-icon">📊</div>
+              <div>Select an example or enter Mermaid code to see the diagram</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>Powered by <a href="https://github.com/lukilabs/beautiful-mermaid" target="_blank" rel="noopener">Beautiful Mermaid</a></span>
+      <span>•</span>
+      <a href="https://github.com/lukilabs/beautiful-mermaid" target="_blank" rel="noopener">GitHub</a>
+      <span>•</span>
+      <a href="https://mermaid.js.org/intro/" target="_blank" rel="noopener">Mermaid Docs</a>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/beautiful-mermaid/dist/beautiful-mermaid.browser.global.js"></script>
+  <script src="examples.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

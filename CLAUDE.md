@@ -63,6 +63,11 @@ beautiful-mermaid-demo/
 │   └── utils/
 │       └── helpers.ts        # File saving & display utilities
 ├── output/                   # Generated SVG files (gitignored)
+├── website/                  # Interactive web showcase
+│   ├── index.html            # Main page with split-view editor
+│   ├── styles.css            # Dark theme styling
+│   ├── app.js                # Application logic
+│   └── examples.js           # Diagram examples data
 └── CLAUDE.md
 ```
 
@@ -102,6 +107,28 @@ const svg = await renderMermaid(diagram, customTheme)
 ```typescript
 import { fromShikiTheme } from 'beautiful-mermaid'
 const colors = fromShikiTheme(highlighter.getTheme('vitesse-dark'))
+```
+
+## Web Showcase
+
+The `website/` folder contains an interactive browser-based showcase:
+
+**Features:**
+- Split-view layout: code editor (left) + rendered diagram (right)
+- Live rendering as you type (300ms debounce)
+- All 16 examples organized by category (tabs + pills)
+- Theme switcher (15 built-in themes)
+- Copy SVG to clipboard
+- Download SVG as file
+- Keyboard shortcuts: Ctrl+Enter (render), Ctrl+S (download)
+
+**Browser usage:**
+```html
+<script src="https://unpkg.com/beautiful-mermaid/dist/beautiful-mermaid.browser.global.js"></script>
+<script>
+  const { renderMermaid, THEMES } = beautifulMermaid;
+  renderMermaid('graph TD; A-->B').then(svg => { ... });
+</script>
 ```
 
 ## Important Notes

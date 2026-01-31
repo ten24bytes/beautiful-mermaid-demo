@@ -24,6 +24,15 @@ Run the interactive menu:
 npm run demo
 ```
 
+### Web Showcase
+
+Open `website/index.html` in your browser to explore the interactive showcase:
+- Browse all 16 diagram examples by category
+- Edit code live and see instant rendering
+- Switch between 15 built-in themes
+- Paste your own Mermaid code
+- Download or copy generated SVGs
+
 ## Demo Scripts
 
 Each demo showcases different Beautiful Mermaid capabilities:
@@ -52,6 +61,12 @@ src/
 ├── diagrams/          # 16 diagram examples organized by type
 ├── demos/             # 5 runnable demo scripts
 └── utils/             # Helper utilities
+
+website/
+├── index.html         # Interactive web showcase
+├── styles.css         # Dark theme styling
+├── app.js             # Application logic
+└── examples.js        # Diagram examples data
 ```
 
 ## What is Beautiful Mermaid?
